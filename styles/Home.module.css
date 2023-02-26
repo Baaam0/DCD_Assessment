@@ -1,4 +1,7 @@
-.main {
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+/* .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,16 +132,16 @@
   position: absolute;
   z-index: -1;
 }
+*/
 
-/* Conic Gradient Animation */
-.thirteen::before {
+
+/* .thirteen::before {
   animation: 6s rotate linear infinite;
   width: 200%;
   height: 200%;
   background: var(--tile-border);
 }
 
-/* Inner Square */
 .thirteen::after {
   inset: 0;
   padding: 1px;
@@ -151,7 +154,7 @@
   background-clip: content-box;
 }
 
-/* Enable hover only on non-touch devices */
+
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
@@ -173,7 +176,7 @@
   }
 }
 
-/* Mobile */
+
 @media (max-width: 700px) {
   .content {
     padding: 4rem;
@@ -250,7 +253,6 @@
   }
 }
 
-/* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
@@ -275,4 +277,172 @@
   to {
     transform: rotate(0deg);
   }
+} */
+
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  text-align: center;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 200;
 }
+
+
+.grid {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;  
+}
+
+.weatherCard {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.card {
+  z-index: 5;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-0%, -110%); */
+  height: 55%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card > div:nth-child(2) > div:nth-child(2) {
+  font-size: 1.5rem;
+}
+
+.blur {
+  /* filter: blur(8px);
+  -webkit-filter: blur(7px); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+  height: 250px;
+  width: 150px;
+  z-index: 0;
+  background: linear-gradient(to top,rgb(255, 255, 255), rgba(76, 0, 255, 0));
+  padding-bottom: 2rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.date {
+  position: absolute;
+  bottom: -130px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.weatherCard > div:nth-child(1) {
+   filter: blur(8px);
+  -webkit-filter: blur(3px);
+  width: 70%;
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  /* box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.2); */
+  z-index: -1000;
+  position: relative;
+}
+
+.weatherCard > p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  z-index: 1000;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.date > p:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-bottom: 5px;
+  
+}
+
+.date > p:nth-child(3) {
+  color:rgba(0, 0, 0, 0.3)
+}
+
+/* .center > div:first-child {
+   filter: blur(20px);
+  -webkit-filter: blur(27px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  z-index: -1000;
+  background: linear-gradient(to bottom,rgb(255, 255, 255, 1), rgba(139, 203, 255, 0.6));
+  padding-bottom: 2rem;
+  border-radius: 25%;
+  position: absolute;
+} */
+/* 
+.center {
+  position: relative;
+} */
+
+.description {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.description > p:first-child {
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding-bottom: 5px;
+}
+
+.description > p:nth-child(2), .description > p:nth-child(3) {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+
+
