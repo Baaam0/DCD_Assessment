@@ -7,7 +7,7 @@ import axios from 'axios'
 
 export default function Home() {
 
-  const apiKey = "2f9718464582c7a62ed7593d385e39d4";
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
   const location = "Vancouver";
   const units = "metric";
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&appid=${apiKey}`;
@@ -104,8 +104,10 @@ export default function Home() {
                 <Image
                   src={icon}
                   alt="Weather Icon"
-                  layout='fill'
-                  objectFit='contain'
+                  // layout='fill'
+                  // objectFit='contain'
+                  width={130}
+                  height={130}
                   sizes='100px'
                 />
               </div>
