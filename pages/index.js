@@ -7,7 +7,7 @@ import axios from 'axios'
 
 export default function Home() {
 
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY_2;
   const location = "Vancouver";
   const units = "metric";
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&appid=${apiKey}`;
